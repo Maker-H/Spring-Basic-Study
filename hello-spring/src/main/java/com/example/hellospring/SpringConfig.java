@@ -1,6 +1,8 @@
+package com.example.hellospring;
+
 import com.example.hellospring.repository.MemberRepository;
 import com.example.hellospring.repository.MemoryMemberRepository;
-import com.example.hellospring.service.Memberservice;
+import com.example.hellospring.service.MemberService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class SpringConfig {
 
     @Bean
-    public Memberservice memberservice() {
-        return new Memberservice(memberRepository());
+    public MemberService memberservice() {
+        return new MemberService(memberRepository());
     }
 
     @Bean

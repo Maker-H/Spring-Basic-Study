@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberserviceTest {
 
-    Memberservice memberservice;
+    MemberService memberservice;
     MemoryMemberRepository memberRepository;
 
     /*
@@ -24,7 +24,7 @@ class MemberserviceTest {
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
-        memberservice = new Memberservice(memberRepository);
+        memberservice = new MemberService(memberRepository);
     }
 
     @AfterEach
