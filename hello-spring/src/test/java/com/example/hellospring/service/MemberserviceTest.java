@@ -14,10 +14,13 @@ class MemberserviceTest {
     Memberservice memberservice;
     MemoryMemberRepository memberRepository;
 
-    // 테스트에서 만든게 새로운 인스턴스이기 때문에 같은 레포지토리로 테스트 하는게 맞음...
-    // Memberservice memberservice = new Memberservice();
-    // MemoryMemberRepository memberRepository = new MemoryMemberRepository();
-
+    /*
+      테스트에서 만든게 새로운 인스턴스이기 때문에 같은 레포지토리로 테스트 하는게 맞음...
+      이렇게 했었을 때는 memberservice 안에서 다시 new memmoryMemberRepository 해서 사용했었
+      그래서 이렇게 하면 member 안에 있는 레포지토리와 테스트케이스에서 사용하는 레포지토리 인스턴스가 다른 문제가 있었음
+      Memberservice memberservice = new Memberservice();
+      MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+     */
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
