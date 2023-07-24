@@ -18,7 +18,6 @@ public class JdbcMemberRepository implements MemberRepository {
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";
-
         Connection conn = null; //
         PreparedStatement pstmt = null;
         ResultSet rs = null; // 결과를 받는 것
@@ -40,6 +39,7 @@ public class JdbcMemberRepository implements MemberRepository {
             }
 
             return member;
+
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {

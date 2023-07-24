@@ -28,7 +28,7 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-
+        System.out.println("컨트롤러");
         memberService.join(member);
 
         return "redirect:/";
