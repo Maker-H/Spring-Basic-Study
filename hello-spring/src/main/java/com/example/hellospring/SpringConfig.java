@@ -1,6 +1,7 @@
 package com.example.hellospring;
 
 import com.example.hellospring.repository.JdbcMemberRepository;
+import com.example.hellospring.repository.JdbcTemplateMemberRepository;
 import com.example.hellospring.repository.MemberRepository;
 import com.example.hellospring.repository.MemoryMemberRepository;
 import com.example.hellospring.service.MemberService;
@@ -14,7 +15,7 @@ import javax.sql.DataSource;
 public class SpringConfig {
 
     @Autowired
-    DataSource dataSource;
+    DataSource dataSource; // spring에서 지원해줌
 
     @Bean
     public MemberService memberservice() {
@@ -23,7 +24,8 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
 
