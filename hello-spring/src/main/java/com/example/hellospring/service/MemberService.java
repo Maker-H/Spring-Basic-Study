@@ -21,9 +21,17 @@ public class MemberService {
      */
     @Transactional
     public Long join(Member member) {
-        // 중복 회원 체크
-        validateDuplicateMember(member);
-        return member.getId();
+        long start = System.currentTimeMillis();
+        try {
+            // 중복 회원 체크
+            validateDuplicateMember(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMS = finish - start;
+            System.out.println("join" + timeMS);
+
+        }
     }
 
     private void validateDuplicateMember(Member member) {
